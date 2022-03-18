@@ -1,0 +1,39 @@
+{
+  "name": "mutablejs",
+  "version": "0.1.0",
+  "description": "Minimal JS library",
+  "main": "dist/mutable.min.js",
+  "scripts": {
+    "build": "gulp",
+    "test": "gulp test && node test/log.js",
+    "test-saucelabs": "gulp test-saucelabs",
+    "release": "node build/release.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/KingPixil/mutable.git"
+  },
+  "keywords": [
+    "mutable",
+    "mvvm",
+    "user interface",
+    "UI"
+  ],
+  "author": "Jorge Epuñan",
+  "license": "MIT",
+  "devDependencies": {
+    "buble": "^0.15.2",
+    "gulp": "^3.9.1",
+    "gulp-concat": "^2.6.0",
+    "gulp-connect": "^5.0.0",
+    "gulp-header": "^1.8.8",
+    "gulp-include": "^2.3.1",
+    "gulp-replace": "^0.5.4",
+    "gulp-size": "^2.1.0",
+    "gulp-uglify": "^2.1.2"
+  },
+  "engines": {
+    "node": "10.15.1",
+    "npm": ">=6.0.0"
+  }
+}
