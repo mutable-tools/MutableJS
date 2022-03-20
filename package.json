@@ -5,13 +5,10 @@
   "main": "dist/mutable.min.js",
   "scripts": {
     "build": "gulp",
-    "test": "gulp test && node test/log.js",
-    "test-saucelabs": "gulp test-saucelabs",
-    "release": "node build/release.js"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/KingPixil/mutable.git"
+    "url": "https://github.com/mutable-tools/MutableJS"
   },
   "keywords": [
     "mutable",
