@@ -1,4 +1,4 @@
-/* Mutable v0.11.0 */
+/* Mutable v0.2.0 */
 
 (function(root, factory) {
   /* ======= Global Mutable ======= */
@@ -1895,7 +1895,7 @@
     
       // Setup render Function
       if(this.$render === noop) {
-        this.$render = mutable.compile(this.$template);
+        this.$render = Mutable.compile(this.$template);
       }
     
       // Run First Build
@@ -1909,7 +1909,7 @@
      * Renders Virtual DOM
      * @return {Object} Virtual DOM
      */
-    mutable.prototype.render = function() {
+    Mutable.prototype.render = function() {
       // Call render function
       return this.$render(m);
     }
@@ -2001,7 +2001,7 @@
     /**
      * Version of Mutable
      */
-    Mutable.version = '0.11.0';
+    Mutable.version = '0.2.0';
     
     /**
      * Mutable Utilities

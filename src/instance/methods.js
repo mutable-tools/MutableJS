@@ -179,7 +179,7 @@ Mutable.prototype.mount = function(el) {
 
   // Setup render Function
   if(this.$render === noop) {
-    this.$render = mutable.compile(this.$template);
+    this.$render = Mutable.compile(this.$template);
   }
 
   // Run First Build
@@ -193,7 +193,7 @@ Mutable.prototype.mount = function(el) {
  * Renders Virtual DOM
  * @return {Object} Virtual DOM
  */
-mutable.prototype.render = function() {
+Mutable.prototype.render = function() {
   // Call render function
   return this.$render(m);
 }

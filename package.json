@@ -1,10 +1,10 @@
 {
   "name": "mutablejs",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "Minimal JS library",
   "main": "dist/mutable.min.js",
   "scripts": {
-    "build": "gulp",
+    "build": "gulp"
   },
   "repository": {
     "type": "git",

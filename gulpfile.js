@@ -11,7 +11,6 @@ const size = require("gulp-size");
 const Transform = require("stream").Transform;
 
 const pkg = require('./package.json');
-
 const comment = `/* Mutable v${pkg.version} */\r\n`;
 
 const gulpBuble = function(options) {
