@@ -1,6 +1,7 @@
 <div align="center">
   <img src="https://i.imgur.com/6ANjYrZ.png" />
 </div>
+
 # MutableJS
 
 Minimal JavaScript library. Only 18kb. If you're into Web Components, Polymer, Vue, you're 👌.
