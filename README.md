@@ -175,7 +175,7 @@ m-on:event  // event listener
   // .shift
   // .alt
   // .enter
-m-literal   // conserve value's property as literal JavaScript expression
+m-original   // conserve value's property as original JavaScript expression
 m-model     // binding data to input value
 ```
 

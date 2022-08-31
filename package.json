@@ -1,6 +1,6 @@
 {
   "name": "mutablejs",
-  "version": "0.2.1",
+  "version": "1.0.1",
   "description": "Minimal JS library",
   "main": "dist/mutable.min.js",
   "scripts": {

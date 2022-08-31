@@ -1,4 +1,4 @@
-/* Mutable v0.2.0 */
+/* Mutable v1.0.1 */
 
 (function(root, factory) {
   /* ======= Global Mutable ======= */
@@ -2287,12 +2287,12 @@
     
             if(radio === true) {
               var valueAttr = attrs.value;
-              var literalValueAttr = null;
+              var originalValueAttr = null;
               var valueAttrValue = "null";
               if(valueAttr !== undefined) {
                 valueAttrValue = "\"" + (compileTemplate(valueAttr.value, dependencies, true)) + "\"";
-              } else if((literalValueAttr = attrs["m-literal:value"])) {
-                valueAttrValue = "" + (compileTemplate(literalValueAttr.value, dependencies, true));
+              } else if((originalValueAttr = attrs["m-original:value"])) {
+                valueAttrValue = "" + (compileTemplate(originalValueAttr.value, dependencies, true));
               }
               domSetter = domSetter + " === " + valueAttrValue;
               keypathSetter = valueAttrValue;
@@ -2349,7 +2349,7 @@
       }
     };
     
-    specialDirectives["m-literal"] = {
+    specialDirectives["m-original"] = {
       duringPropGenerate: function(prop, vnode, state) {
         var propName = prop.meta.arg;
         var propValue = prop.value;
@@ -2363,7 +2363,7 @@
           // Detected class, use runtime class render helper
           return ("\"class\": Mutable.renderClass(" + propValue + "), ");
         } else {
-          // Default literal attribute
+          // Default original attribute
           return ("\"" + propName + "\": " + propValue + ", ");
         }
       }

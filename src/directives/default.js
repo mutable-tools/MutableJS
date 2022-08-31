@@ -113,12 +113,12 @@ specialDirectives["m-model"] = {
 
         if(radio === true) {
           let valueAttr = attrs.value;
-          let literalValueAttr = null;
+          let originalValueAttr = null;
           let valueAttrValue = "null";
           if(valueAttr !== undefined) {
             valueAttrValue = `"${compileTemplate(valueAttr.value, dependencies, true)}"`;
-          } else if((literalValueAttr = attrs["m-literal:value"])) {
-            valueAttrValue = `${compileTemplate(literalValueAttr.value, dependencies, true)}`;
+          } else if((originalValueAttr = attrs["m-original:value"])) {
+            valueAttrValue = `${compileTemplate(originalValueAttr.value, dependencies, true)}`;
           }
           domSetter = `${domSetter} === ${valueAttrValue}`;
           keypathSetter = valueAttrValue;
@@ -175,7 +175,7 @@ specialDirectives["m-model"] = {
   }
 };
 
-specialDirectives["m-literal"] = {
+specialDirectives["m-original"] = {
   duringPropGenerate: function(prop, vnode, state) {
     const propName = prop.meta.arg;
     const propValue = prop.value;
@@ -189,7 +189,7 @@ specialDirectives["m-literal"] = {
       // Detected class, use runtime class render helper
       return `"class": Mutable.renderClass(${propValue}), `;
     } else {
-      // Default literal attribute
+      // Default original attribute
       return `"${propName}": ${propValue}, `;
     }
   }
