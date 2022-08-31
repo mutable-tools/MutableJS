@@ -304,6 +304,10 @@ export default {
 
 ```
 
+## example
+
+See `/example/index.html`, based in [this VueJS project](https://github.com/juanbrujo/vue-calculaasado)
+
 ## License
 
 This library is released under the [MIT license](https://github.com/mutable-tools/MutableJS/blob/master/LICENSE).
