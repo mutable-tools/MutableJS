@@ -2,18 +2,19 @@
 
 const gulp = require('gulp');
 const buble = require('buble');
-const uglify = require("gulp-uglify");
+const uglify = require('gulp-uglify');
 const replace = require('gulp-replace');
-const include = require("gulp-include");
-const concat = require("gulp-concat");
-const header = require("gulp-header");
-const size = require("gulp-size");
-const Transform = require("stream").Transform;
+const include = require('gulp-include');
+const concat = require('gulp-concat');
+const header = require('gulp-header');
+const size = require('gulp-size');
+const strip = require('gulp-strip-comments');
+const Transform = require('stream').Transform;
 
 const pkg = require('./package.json');
 const comment = `/* Mutable v${pkg.version} */\r\n`;
 
-const gulpBuble = function(options) {
+const gulpBubble = function(options) {
   return new Transform({
     objectMode: true,
     transform: function(file, encoding, callback) {
@@ -26,7 +27,7 @@ const gulpBuble = function(options) {
         try {
           result = buble.transform(file.contents.toString(), options);
         } catch(e) {
-          throw new Error("[Buble] Error: " + e);
+          throw new Error("[Bubble] Error: " + e);
         }
 
         file.contents = new Buffer(result.code);
@@ -41,7 +42,7 @@ const gulpBuble = function(options) {
 gulp.task('transpile', function() {
   return gulp.src(['./src/index.js'])
     .pipe(include())
-    .pipe(gulpBuble({
+    .pipe(gulpBubble({
       namedFunctionExpressions: false,
       transforms: {
         arrow: true,
@@ -75,6 +76,7 @@ gulp.task('build', ['transpile'], function() {
   return gulp.src(['./src/wrapper.js'])
     .pipe(include())
     .pipe(concat('mutable.js'))
+    .pipe(strip())
     .pipe(header(comment + '\n'))
     .pipe(replace('__VERSION__', pkg.version))
     .pipe(replace('__ENV__', "development"))
