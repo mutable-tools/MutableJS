@@ -304,9 +304,22 @@ export default {
 
 ```
 
-## example
+## Example
 
 See `/example/index.html`, based in [this VueJS project](https://github.com/juanbrujo/vue-calculaasado)
+
+## Development
+
+Node v.10.15.1
+
+### Commands:
+
+```bash
+npm i
+npm run build
+```
+
+Build files will be created in `/dist`.
 
 ## License
 

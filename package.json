@@ -1,6 +1,6 @@
 {
   "name": "mutablejs",
-  "version": "0.2.1",
+  "version": "0.2.2",
   "description": "Minimal JS library",
   "main": "dist/mutable.min.js",
   "scripts": {
@@ -26,6 +26,7 @@
     "gulp-include": "^2.3.1",
     "gulp-replace": "^0.5.4",
     "gulp-size": "^2.1.0",
+    "gulp-strip-comments": "^2.5.2",
     "gulp-uglify": "^2.1.2"
   },
   "engines": {
