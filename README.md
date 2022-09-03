@@ -56,7 +56,7 @@ new Mutable({
   },
   hooks: {
     mounted() {
-      this.callMethod('newGreet', ['¡Hola a tod@s!'])
+      this.methods('newGreet', ['¡Hola a tod@s!'])
     }
   },
 })
@@ -184,7 +184,7 @@ m-model     // binding data to input value
 ```js
 this.get('property')
 this.set('property', data)
-this.callMethod('methos', [data])
+this.methods('methodName', [data])
 ```
 
 ### Lifecycle
@@ -304,9 +304,22 @@ export default {
 
 ```
 
-## example
+## Example
 
 See `/example/index.html`, based in [this VueJS project](https://github.com/juanbrujo/vue-calculaasado)
+
+## Development
+
+Node v.10.15.1
+
+### Commands:
+
+```bash
+npm i
+npm run build
+```
+
+Build files will be created in `/dist`.
 
 ## License
 

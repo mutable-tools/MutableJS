@@ -1,7 +1,7 @@
 /* ======= Global API ======= */
 
 /**
- * Configuration of Mutable
+ * Mutable Configuration
  */
 Mutable.config = {
   silent: ("__ENV__" === "production") || (typeof console === 'undefined'),
@@ -11,7 +11,7 @@ Mutable.config = {
 }
 
 /**
- * Version of Mutable
+ * Mutable Version
  */
 Mutable.version = '__VERSION__';
 
