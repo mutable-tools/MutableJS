@@ -1,4 +1,4 @@
-/* Mutable v1.0.0 */
+/* Mutable v1.1.0 */
 
 (function(root, factory) {
   (typeof module === "object" && module.exports) ? module.exports = factory() : root.Mutable = factory();
@@ -1555,7 +1555,7 @@
       }
     }
 
-    Mutable.version = '1.0.0';
+    Mutable.version = '1.1.0';
 
     Mutable.util = {
       noop: noop,
@@ -1774,12 +1774,12 @@
 
                 if(radio === true) {
               var valueAttr = attrs.value;
-              var literalValueAttr = null;
+              var originalValueAttr = null;
               var valueAttrValue = "null";
               if(valueAttr !== undefined) {
                 valueAttrValue = "\"" + (compileTemplate(valueAttr.value, dependencies, true)) + "\"";
-              } else if((literalValueAttr = attrs["m-literal:value"])) {
-                valueAttrValue = "" + (compileTemplate(literalValueAttr.value, dependencies, true));
+              } else if((originalValueAttr = attrs["m-original:value"])) {
+                valueAttrValue = "" + (compileTemplate(originalValueAttr.value, dependencies, true));
               }
               domSetter = domSetter + " === " + valueAttrValue;
               keypathSetter = valueAttrValue;
@@ -1829,7 +1829,7 @@
       }
     };
 
-        specialDirectives["m-literal"] = {
+        specialDirectives["m-original"] = {
       duringPropGenerate: function(prop, vnode, state) {
         var propName = prop.meta.arg;
         var propValue = prop.value;
