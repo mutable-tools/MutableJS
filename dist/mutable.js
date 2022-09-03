@@ -1,4 +1,4 @@
-/* Mutable v0.2.2 */
+/* Mutable v1.0.0 */
 
 (function(root, factory) {
   (typeof module === "object" && module.exports) ? module.exports = factory() : root.Mutable = factory();
@@ -1420,7 +1420,7 @@
       callHook(this, 'destroyed');
     }
 
-    Mutable.prototype.callMethod = function(method, args) {
+    Mutable.prototype.methods = function(method, args) {
       args = args || [];
 
       return this.$data[method].apply(this, args);
@@ -1555,7 +1555,7 @@
       }
     }
 
-    Mutable.version = '0.2.2';
+    Mutable.version = '1.0.0';
 
     Mutable.util = {
       noop: noop,
@@ -1744,7 +1744,7 @@
           }
         }
 
-        var code = "function(event) {" + modifiers + "instance.callMethod(\"" + methodToCall + "\", [" + params + "])}";
+        var code = "function(event) {" + modifiers + "instance.methods(\"" + methodToCall + "\", [" + params + "])}";
         addEventListenerCodeToVNode(eventType, code, vnode);
       }
     }
