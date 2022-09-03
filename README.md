@@ -6,6 +6,10 @@
 
 Minimal JavaScript library. Only 18kb. If you're into Web Components, Polymer, Vue, you're 👌.
 
+<div align="center">
+  <a href="https://mutable.js.org/" target="_blank">Website</a> &bull; <a href="https://github.com/mutable-tools/MutableJS" target="_blank">Repository</a> &bull; <a href="https://mutablejs.netlify.app/example/" target="_blank">Working example</a>
+</div>
+
 ## Use
 
 ```html
