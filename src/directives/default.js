@@ -78,7 +78,7 @@ specialDirectives["m-on"] = {
     }
 
     // Final event listener code
-    const code = `function(event) {${modifiers}instance.callMethod("${methodToCall}", [${params}])}`;
+    const code = `function(event) {${modifiers}instance.methods("${methodToCall}", [${params}])}`;
     addEventListenerCodeToVNode(eventType, code, vnode);
   }
 }

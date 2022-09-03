@@ -71,7 +71,7 @@ Mutable.prototype.destroy = function() {
  * @param {String} method
  * @return {Any} output of method
  */
-Mutable.prototype.callMethod = function(method, args) {
+Mutable.prototype.methods = function(method, args) {
   // Get arguments
   args = args || [];
 

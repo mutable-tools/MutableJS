@@ -132,7 +132,7 @@
         computed: {
           comensales: {
             get() {
-              return this.callMethod('getComensales', [])
+              return this.methods('getComensales', [])
             }
           },
           totalInvitados: {
@@ -142,27 +142,27 @@
           },
           cantidadCarne: {
             get() {
-              return this.callMethod('round', [this.get('comensales').ninos * 0.2 + this.get('comensales').mujeres * 0.25 + this.get('comensales').hombres * 0.35])
+              return this.methods('round', [this.get('comensales').ninos * 0.2 + this.get('comensales').mujeres * 0.25 + this.get('comensales').hombres * 0.35])
             }
           },
           cantidadEmbutido: {
             get() {
-              return this.callMethod('round', [this.get('comensales').ninos * 0.05 + this.get('comensales').mujeres * 0.05 + this.get('comensales').hombres * 0.1])
+              return this.methods('round', [this.get('comensales').ninos * 0.05 + this.get('comensales').mujeres * 0.05 + this.get('comensales').hombres * 0.1])
             }
           },
           cantidadPan: {
             get() {
-              return this.callMethod('round', [(this.get('comensales').ninos * 1 + this.get('comensales').mujeres * 1 + this.get('comensales').hombres * 2) / 2])
+              return this.methods('round', [(this.get('comensales').ninos * 1 + this.get('comensales').mujeres * 1 + this.get('comensales').hombres * 2) / 2])
             }
           },
           cantidadCarbon: {
             get() {
-              return this.callMethod('round', [(this.get('cantidadCarne') + this.get('cantidadEmbutido')) * 3 / 5])
+              return this.methods('round', [(this.get('cantidadCarne') + this.get('cantidadEmbutido')) * 3 / 5])
             }
           },
           cantidadAdultos: {
             get() {
-              return this.callMethod('round', [this.get('comensales').mujeres + this.get('comensales').hombres])
+              return this.methods('round', [this.get('comensales').mujeres + this.get('comensales').hombres])
             }
           },
           precioTotal: {
@@ -172,12 +172,12 @@
               const carne = this.get('cantidadCarne') * this.get('presupuestoSeleccionado').precioCarne
               const embutido = this.get('cantidadEmbutido') * this.get('presupuestoSeleccionado').precioEmbutido
 
-              return this.callMethod('round', [carne + embutido + carbon + pan])
+              return this.methods('round', [carne + embutido + carbon + pan])
             }
           },
           precioCadaUno: {
             get() {
-              return this.callMethod('round', [this.get('precioTotal') / this.get('cantidadAdultos')])
+              return this.methods('round', [this.get('precioTotal') / this.get('cantidadAdultos')])
             }
           },
         },
@@ -195,9 +195,9 @@
           },
           getComensales() {
             return {
-              ninos: this.callMethod('getNumeroAntiTroll', [this.get('cantNinos')]),
-              mujeres: this.callMethod('getNumeroAntiTroll', [this.get('cantMujeres')]),
-              hombres: this.callMethod('getNumeroAntiTroll', [this.get('cantHombres')])
+              ninos: this.methods('getNumeroAntiTroll', [this.get('cantNinos')]),
+              mujeres: this.methods('getNumeroAntiTroll', [this.get('cantMujeres')]),
+              hombres: this.methods('getNumeroAntiTroll', [this.get('cantHombres')])
             }        
           },
           getNumeroAntiTroll(prop) {

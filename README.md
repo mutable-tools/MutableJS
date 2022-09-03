@@ -56,7 +56,7 @@ new Mutable({
   },
   hooks: {
     mounted() {
-      this.callMethod('newGreet', ['¡Hola a tod@s!'])
+      this.methods('newGreet', ['¡Hola a tod@s!'])
     }
   },
 })
@@ -184,7 +184,7 @@ m-model     // binding data to input value
 ```js
 this.get('property')
 this.set('property', data)
-this.callMethod('methos', [data])
+this.methods('methodName', [data])
 ```
 
 ### Lifecycle
